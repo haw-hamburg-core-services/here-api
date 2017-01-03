@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -47,7 +46,7 @@ public class Weather {
 
     }
 
-    public String requestReport(String name, Product product){
+    public String requestReport(String name, WeatherProduct product){
         String response = null;
         String httpCall = BASE_URL + PATH + "report" + FORMAT_SPEC
                 + "?app_id=" + properties.appID

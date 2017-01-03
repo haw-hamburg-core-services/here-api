@@ -3,7 +3,7 @@ package de.haw_hamburg.informatik.core.here4j.weather;
 /**
  * Created by skrec on 03.01.2017.
  */
-public enum Product {
+public enum WeatherProduct {
     observation,
     forecast_7days,
     forecast_7days_simple,
