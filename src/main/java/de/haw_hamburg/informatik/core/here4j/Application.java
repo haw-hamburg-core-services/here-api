@@ -1,5 +1,8 @@
 package de.haw_hamburg.informatik.core.here4j;
 
+import de.haw_hamburg.informatik.core.here4j.weather.Product;
+import de.haw_hamburg.informatik.core.here4j.weather.Weather;
+
 import java.io.IOException;
 
 /**
@@ -7,10 +10,9 @@ import java.io.IOException;
  */
 public class Application {
     public static void main (String ... args ){
-        try {
-            PropertyReader propertyReader = new PropertyReader();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Weather weather = new Weather();
+        String response = weather.requestReport("Hamburg", Product.forecast_hourly);
+
+        System.out.println(response);
     }
 }
