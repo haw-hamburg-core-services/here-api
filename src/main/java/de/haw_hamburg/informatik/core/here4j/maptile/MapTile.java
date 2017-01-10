@@ -5,6 +5,10 @@ import de.haw_hamburg.informatik.core.here4j.weather.Properties;
 import de.haw_hamburg.informatik.core.here4j.weather.Weather;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import javax.imageio.ImageIO;
@@ -24,7 +28,7 @@ public class MapTile {
 
     private static final String PROTOCOL = "https://";
 
-    private MapTileTypes mapTileType = MapTileTypes.base;
+    private MapTileTypes mapTileType = MapTileTypes.traffic;
     private final static String BASE_URL = "maps.api.here.com";
     private final static String PATH = "/maptile/2.1/";
     private final static String MAPID = "newest";
@@ -71,7 +75,7 @@ public class MapTile {
      * 128 = [128, 128]
      * Note: Raster coverage tiles (rctile, rconlytile and rcdistonlytile) only support 256 sizes.
      */
-    private final static int SIZE = 256;
+    private final static int SIZE = 512;
 
     /**
      * Returned image format. The following image formats are supported:
@@ -101,38 +105,36 @@ public class MapTile {
 
     /**
      *
-     * @param resourceTileType  on of the defined types.
-     * @param zoomlevel         number between 0 and 20
-     * @param column            can be everything between 0 and number of colums - 1 (number of colums = 2^zoomlevel)
-     * @param row               can be any number between 0 and number of rows - 1 (number of rows = 2^zoom)
+     * @param resourceTileType  one of the defined types.
+     * @param zoomlevel         number between 0 and 20 (0 means only one tile for the globe.)
+     * @param latitude          the latitude geo location
+     * @param longitude         the longitude geo location
      * @return
      */
-    public String requestMapTile(ResourceTileType resourceTileType, int zoomlevel, int column, int row){
-        if(zoomlevel > 20 || zoomlevel < 0){
-            //ERROR
-            return null;
-        }
-        int numberOfColsRows = (int) Math.pow(2,zoomlevel);
-        if(column > (numberOfColsRows-1) ||column < 0) {
-            //ERROR
-            return null;
-        }
-        if(row > (numberOfColsRows-1) ||row < 0) {
-            //ERROR
-            return null;
-        }
+    public BufferedImage requestMapTile(ResourceTileType resourceTileType, int zoomlevel, double latitude, double longitude) throws IOException {
 
         int serverNumber = (int) (Math.random() * 4 ) + 1;
 
+        GridCoordinate coord = GridCoordinate.getGridCoordinateForGeoLocation(latitude,longitude,zoomlevel);
         String httpCall = PROTOCOL + serverNumber + "." + mapTileType.name() + "." + BASE_URL + PATH
                 + resourceTileType.name() + "/" + MAPID + "/" + SCHEME + "/"
-                + zoomlevel + "/" + column + "/" + row + "/" + SIZE + "/" + FORMAT
+                + zoomlevel + "/" + coord.getColumn() + "/" + coord.getRow() + "/" + SIZE + "/" + FORMAT
                 + "?app_id=" + properties.appID + "&app_code=" + properties.appCode;
-        String response = null;
+
+        BufferedImage response = null;
         try {
             URI uri = new URI(httpCall);
             RestTemplate restTemplate = new RestTemplate();
-            response = restTemplate.getForObject(uri, String.class);
+
+            //Get image from external app with API call
+            ResponseEntity<byte[]> responseEntity = restTemplate.exchange(uri, HttpMethod.GET, new HttpEntity<byte[]>(new HttpHeaders()), byte[].class);
+            byte[] image = responseEntity.getBody();
+
+            if(image != null) {
+                InputStream in = new ByteArrayInputStream(image);
+                response = ImageIO.read(in);
+            }
+            //response = restTemplate.getForObject(uri, BufferedImage.class);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
