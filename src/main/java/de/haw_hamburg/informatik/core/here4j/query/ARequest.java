@@ -37,7 +37,7 @@ public abstract class ARequest {
     protected <T> T request (Map<String, String> parameters, Class<T> responseType) throws URISyntaxException {
         T response = null;
 
-        //build request url
+        //build resources url
         String request = baseURL + path + resource + "." + format +
                 "?app_id=" + app_id +
                 "&app_code=" + app_code;
@@ -47,7 +47,7 @@ public abstract class ARequest {
             }
         }
 
-        logger.info("Executing request: " + request);
+        logger.info("Executing resources: " + request);
 
         URI uri = new URI(request);
         RestTemplate restTemplate = new RestTemplate();

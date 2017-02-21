@@ -1,0 +1,661 @@
+{
+  "response": {
+    "metaInfo": {
+      "requestId": "lulu1",
+      "timestamp": "2017-02-21T19:55:18Z",
+      "mapVersion": "8.30.68.151",
+      "moduleVersion": "7.2.201705-101638",
+      "interfaceVersion": "2.6.29"
+    },
+    "route": [
+      {
+        "waypoint": [
+          {
+            "linkId": "-53623477",
+            "mappedPosition": {
+              "latitude": 52.4999825,
+              "longitude": 13.3999652
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.4
+            },
+            "type": "stopOver",
+            "spot": 0.351145,
+            "sideOfStreet": "left",
+            "mappedRoadName": "Neuenburger Straße",
+            "label": "Neuenburger Straße",
+            "shapeIndex": 0
+          },
+          {
+            "linkId": "+53473308",
+            "mappedPosition": {
+              "latitude": 52.4987912,
+              "longitude": 13.4510744
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.45
+            },
+            "type": "stopOver",
+            "spot": 1.0,
+            "sideOfStreet": "neither",
+            "mappedRoadName": "Schleusenufer",
+            "label": "Schleusenufer",
+            "shapeIndex": 52
+          }
+        ],
+        "mode": {
+          "type": "fastest",
+          "transportModes": [
+            "car"
+          ],
+          "trafficMode": "disabled",
+          "feature": []
+        },
+        "leg": [
+          {
+            "start": {
+              "linkId": "-53623477",
+              "mappedPosition": {
+                "latitude": 52.4999825,
+                "longitude": 13.3999652
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.4
+              },
+              "type": "stopOver",
+              "spot": 0.351145,
+              "sideOfStreet": "left",
+              "mappedRoadName": "Neuenburger Straße",
+              "label": "Neuenburger Straße",
+              "shapeIndex": 0
+            },
+            "end": {
+              "linkId": "+53473308",
+              "mappedPosition": {
+                "latitude": 52.4987912,
+                "longitude": 13.4510744
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.45
+              },
+              "type": "stopOver",
+              "spot": 1.0,
+              "sideOfStreet": "neither",
+              "mappedRoadName": "Schleusenufer",
+              "label": "Schleusenufer",
+              "shapeIndex": 52
+            },
+            "length": 4015,
+            "travelTime": 585,
+            "maneuver": [
+              {
+                "position": {
+                  "latitude": 52.4999825,
+                  "longitude": 13.3999652
+                },
+                "instruction": "Fahren Sie auf die <span class=\"street\">Neuenburger Straße</span> nach <span class=\"heading\">Südosten</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">46 m</span>.</span>",
+                "travelTime": 27,
+                "length": 46,
+                "id": "M1",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4995744,
+                  "longitude": 13.4000158
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Neuenburger Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">29 m</span>.</span>",
+                "travelTime": 10,
+                "length": 29,
+                "id": "M2",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4994671,
+                  "longitude": 13.4004235
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Alexandrinenstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">130 m</span>.</span>",
+                "travelTime": 37,
+                "length": 130,
+                "id": "M3",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.498405,
+                  "longitude": 13.3996081
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Gitschiner Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">877 m</span>.</span>",
+                "travelTime": 106,
+                "length": 877,
+                "id": "M4",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4985445,
+                  "longitude": 13.4121823
+                },
+                "instruction": "Fahren Sie weiter auf <span class=\"next-street\">Wassertorplatz</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">129 m</span>.</span>",
+                "travelTime": 14,
+                "length": 129,
+                "id": "M5",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4984264,
+                  "longitude": 13.4140706
+                },
+                "instruction": "Fahren Sie weiter auf die <span class=\"next-street\">Skalitzer Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">269 m</span>.</span>",
+                "travelTime": 42,
+                "length": 269,
+                "id": "M6",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4988449,
+                  "longitude": 13.4179652
+                },
+                "instruction": "Nehmen Sie die <span class=\"exit\">zweite Ausfahrt</span> aus dem Kreisverkehr Kottbusser Tor auf die <span class=\"next-street\">Skalitzer Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">1.7 km</span>.</span>",
+                "travelTime": 247,
+                "length": 1687,
+                "id": "M7",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5009799,
+                  "longitude": 13.4421694
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Schlesische Straße</span> in Richtung <span class=\"sign\"><span lang=\"de\">A117</span>/<span lang=\"de\">Dresden</span>/<span lang=\"de\">Treptow</span>/<span lang=\"de\">Flughafen Schönefeld</span></span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">620 m</span>.</span>",
+                "travelTime": 73,
+                "length": 620,
+                "id": "M8",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4972355,
+                  "longitude": 13.4488964
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf <span class=\"next-street\">Schleusenufer</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">228 m</span>.</span>",
+                "travelTime": 29,
+                "length": 228,
+                "id": "M9",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4987912,
+                  "longitude": 13.4510744
+                },
+                "instruction": "Sie erreichen <span class=\"street\">Schleusenufer</span>.",
+                "travelTime": 0,
+                "length": 0,
+                "id": "M10",
+                "_type": "PrivateTransportManeuverType"
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "distance": 4015,
+          "trafficTime": 642,
+          "baseTime": 585,
+          "flags": [
+            "noThroughRoad",
+            "builtUpArea",
+            "park",
+            "privateRoad"
+          ],
+          "text": "Ihre Fahrt ist <span class=\"length\">4.0 km</span> lang und dauert etwa <span class=\"time\">10 Minuten</span>.",
+          "travelTime": 585,
+          "_type": "RouteSummaryType"
+        }
+      },
+      {
+        "waypoint": [
+          {
+            "linkId": "-53623477",
+            "mappedPosition": {
+              "latitude": 52.4999825,
+              "longitude": 13.3999652
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.4
+            },
+            "type": "stopOver",
+            "spot": 0.351145,
+            "sideOfStreet": "left",
+            "mappedRoadName": "Neuenburger Straße",
+            "label": "Neuenburger Straße",
+            "shapeIndex": 0
+          },
+          {
+            "linkId": "+53473308",
+            "mappedPosition": {
+              "latitude": 52.4987912,
+              "longitude": 13.4510744
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.45
+            },
+            "type": "stopOver",
+            "spot": 1.0,
+            "sideOfStreet": "neither",
+            "mappedRoadName": "Schleusenufer",
+            "label": "Schleusenufer",
+            "shapeIndex": 57
+          }
+        ],
+        "mode": {
+          "type": "fastest",
+          "transportModes": [
+            "car"
+          ],
+          "trafficMode": "disabled",
+          "feature": []
+        },
+        "leg": [
+          {
+            "start": {
+              "linkId": "-53623477",
+              "mappedPosition": {
+                "latitude": 52.4999825,
+                "longitude": 13.3999652
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.4
+              },
+              "type": "stopOver",
+              "spot": 0.351145,
+              "sideOfStreet": "left",
+              "mappedRoadName": "Neuenburger Straße",
+              "label": "Neuenburger Straße",
+              "shapeIndex": 0
+            },
+            "end": {
+              "linkId": "+53473308",
+              "mappedPosition": {
+                "latitude": 52.4987912,
+                "longitude": 13.4510744
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.45
+              },
+              "type": "stopOver",
+              "spot": 1.0,
+              "sideOfStreet": "neither",
+              "mappedRoadName": "Schleusenufer",
+              "label": "Schleusenufer",
+              "shapeIndex": 57
+            },
+            "length": 5101,
+            "travelTime": 697,
+            "maneuver": [
+              {
+                "position": {
+                  "latitude": 52.4999825,
+                  "longitude": 13.3999652
+                },
+                "instruction": "Fahren Sie auf die <span class=\"street\">Neuenburger Straße</span> nach <span class=\"heading\">Südosten</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">46 m</span>.</span>",
+                "travelTime": 27,
+                "length": 46,
+                "id": "M1",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4995744,
+                  "longitude": 13.4000158
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Neuenburger Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">29 m</span>.</span>",
+                "travelTime": 17,
+                "length": 29,
+                "id": "M2",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4994671,
+                  "longitude": 13.4004235
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Alexandrinenstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">715 m</span>.</span>",
+                "travelTime": 129,
+                "length": 715,
+                "id": "M3",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5051641,
+                  "longitude": 13.4052944
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Oranienstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">378 m</span>.</span>",
+                "travelTime": 41,
+                "length": 378,
+                "id": "M4",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5037694,
+                  "longitude": 13.4103692
+                },
+                "instruction": "Nehmen Sie die <span class=\"exit\">dritte Ausfahrt</span> aus dem Kreisverkehr Moritzplatz auf die <span class=\"next-street\">Prinzenstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">256 m</span>.</span>",
+                "travelTime": 40,
+                "length": 256,
+                "id": "M5",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5049388,
+                  "longitude": 13.4117424
+                },
+                "instruction": "Fahren Sie weiter auf die <span class=\"next-street\">Heinrich-Heine-Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">749 m</span>.</span>",
+                "travelTime": 81,
+                "length": 749,
+                "id": "M6",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5110114,
+                  "longitude": 13.4164631
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Köpenicker Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">2.0 km</span>.</span>",
+                "travelTime": 238,
+                "length": 2040,
+                "id": "M7",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5012159,
+                  "longitude": 13.4417295
+                },
+                "instruction": "Fahren Sie weiter auf die <span class=\"next-street\">Schlesische Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">660 m</span>.</span>",
+                "travelTime": 95,
+                "length": 660,
+                "id": "M8",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4972355,
+                  "longitude": 13.4488964
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf <span class=\"next-street\">Schleusenufer</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">228 m</span>.</span>",
+                "travelTime": 29,
+                "length": 228,
+                "id": "M9",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4987912,
+                  "longitude": 13.4510744
+                },
+                "instruction": "Sie erreichen <span class=\"street\">Schleusenufer</span>.",
+                "travelTime": 0,
+                "length": 0,
+                "id": "M10",
+                "_type": "PrivateTransportManeuverType"
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "distance": 5101,
+          "trafficTime": 726,
+          "baseTime": 697,
+          "flags": [
+            "noThroughRoad",
+            "builtUpArea",
+            "privateRoad"
+          ],
+          "text": "Ihre Fahrt ist <span class=\"length\">5.1 km</span> lang und dauert etwa <span class=\"time\">12 Minuten</span>.",
+          "travelTime": 697,
+          "_type": "RouteSummaryType"
+        }
+      },
+      {
+        "waypoint": [
+          {
+            "linkId": "-53623477",
+            "mappedPosition": {
+              "latitude": 52.4999825,
+              "longitude": 13.3999652
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.4
+            },
+            "type": "stopOver",
+            "spot": 0.351145,
+            "sideOfStreet": "left",
+            "mappedRoadName": "Neuenburger Straße",
+            "label": "Neuenburger Straße",
+            "shapeIndex": 0
+          },
+          {
+            "linkId": "+53473308",
+            "mappedPosition": {
+              "latitude": 52.4987912,
+              "longitude": 13.4510744
+            },
+            "originalPosition": {
+              "latitude": 52.5,
+              "longitude": 13.45
+            },
+            "type": "stopOver",
+            "spot": 1.0,
+            "sideOfStreet": "neither",
+            "mappedRoadName": "Schleusenufer",
+            "label": "Schleusenufer",
+            "shapeIndex": 63
+          }
+        ],
+        "mode": {
+          "type": "fastest",
+          "transportModes": [
+            "car"
+          ],
+          "trafficMode": "disabled",
+          "feature": []
+        },
+        "leg": [
+          {
+            "start": {
+              "linkId": "-53623477",
+              "mappedPosition": {
+                "latitude": 52.4999825,
+                "longitude": 13.3999652
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.4
+              },
+              "type": "stopOver",
+              "spot": 0.351145,
+              "sideOfStreet": "left",
+              "mappedRoadName": "Neuenburger Straße",
+              "label": "Neuenburger Straße",
+              "shapeIndex": 0
+            },
+            "end": {
+              "linkId": "+53473308",
+              "mappedPosition": {
+                "latitude": 52.4987912,
+                "longitude": 13.4510744
+              },
+              "originalPosition": {
+                "latitude": 52.5,
+                "longitude": 13.45
+              },
+              "type": "stopOver",
+              "spot": 1.0,
+              "sideOfStreet": "neither",
+              "mappedRoadName": "Schleusenufer",
+              "label": "Schleusenufer",
+              "shapeIndex": 63
+            },
+            "length": 4359,
+            "travelTime": 683,
+            "maneuver": [
+              {
+                "position": {
+                  "latitude": 52.4999825,
+                  "longitude": 13.3999652
+                },
+                "instruction": "Fahren Sie auf die <span class=\"street\">Neuenburger Straße</span> nach <span class=\"heading\">Südosten</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">46 m</span>.</span>",
+                "travelTime": 27,
+                "length": 46,
+                "id": "M1",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4995744,
+                  "longitude": 13.4000158
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Neuenburger Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">29 m</span>.</span>",
+                "travelTime": 17,
+                "length": 29,
+                "id": "M2",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4994671,
+                  "longitude": 13.4004235
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf die <span class=\"next-street\">Alexandrinenstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">715 m</span>.</span>",
+                "travelTime": 129,
+                "length": 715,
+                "id": "M3",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5051641,
+                  "longitude": 13.4052944
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Oranienstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">378 m</span>.</span>",
+                "travelTime": 41,
+                "length": 378,
+                "id": "M4",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5037694,
+                  "longitude": 13.4103692
+                },
+                "instruction": "Nehmen Sie die <span class=\"exit\">zweite Ausfahrt</span> aus dem Kreisverkehr Moritzplatz auf die <span class=\"next-street\">Oranienstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">363 m</span>.</span>",
+                "travelTime": 57,
+                "length": 363,
+                "id": "M5",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5025034,
+                  "longitude": 13.4148216
+                },
+                "instruction": "Fahren Sie weiter auf <span class=\"next-street\">Oranienplatz</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">134 m</span>.</span>",
+                "travelTime": 18,
+                "length": 134,
+                "id": "M6",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5020206,
+                  "longitude": 13.4165812
+                },
+                "instruction": "Fahren Sie weiter auf die <span class=\"next-street\">Oranienstraße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">734 m</span>.</span>",
+                "travelTime": 115,
+                "length": 734,
+                "id": "M7",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.499274,
+                  "longitude": 13.426441
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">halb links</span> ab auf die <span class=\"next-street\">Skalitzer Straße</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">1.1 km</span>.</span>",
+                "travelTime": 177,
+                "length": 1112,
+                "id": "M8",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.5009799,
+                  "longitude": 13.4421694
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">rechts</span> ab auf die <span class=\"next-street\">Schlesische Straße</span> in Richtung <span class=\"sign\"><span lang=\"de\">A117</span>/<span lang=\"de\">Dresden</span>/<span lang=\"de\">Treptow</span>/<span lang=\"de\">Flughafen Schönefeld</span></span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">620 m</span>.</span>",
+                "travelTime": 73,
+                "length": 620,
+                "id": "M9",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4972355,
+                  "longitude": 13.4488964
+                },
+                "instruction": "Biegen Sie <span class=\"direction\">links</span> ab auf <span class=\"next-street\">Schleusenufer</span>. <span class=\"distance-description\">Fahren Sie <span class=\"length\">228 m</span>.</span>",
+                "travelTime": 29,
+                "length": 228,
+                "id": "M10",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 52.4987912,
+                  "longitude": 13.4510744
+                },
+                "instruction": "Sie erreichen <span class=\"street\">Schleusenufer</span>.",
+                "travelTime": 0,
+                "length": 0,
+                "id": "M11",
+                "_type": "PrivateTransportManeuverType"
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "distance": 4359,
+          "trafficTime": 753,
+          "baseTime": 683,
+          "flags": [
+            "noThroughRoad",
+            "builtUpArea",
+            "park",
+            "privateRoad"
+          ],
+          "text": "Ihre Fahrt ist <span class=\"length\">4.4 km</span> lang und dauert etwa <span class=\"time\">11 Minuten</span>.",
+          "travelTime": 683,
+          "_type": "RouteSummaryType"
+        }
+      }
+    ],
+    "language": "de-de",
+    "requestId": "lulu1"
+  }
+}

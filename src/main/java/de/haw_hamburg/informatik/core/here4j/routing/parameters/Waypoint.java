@@ -1,15 +1,12 @@
 package de.haw_hamburg.informatik.core.here4j.routing.parameters;
 
 
+import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.WaypointParameterTypeType;
+
 /**
  * Created by TimoHäckel on 21.02.2017.
  */
-public class WaypointParameter {
-
-    public enum Type {
-        stopOver,
-        passThrough,
-    }
+public class Waypoint {
 
     private final static String PREFIX = "geo!";
 
@@ -17,10 +14,10 @@ public class WaypointParameter {
     private double longitude;
     private Double altitude = Double.NaN;
     private String userLabel = null;
-    private Type type = null;
+    private WaypointParameterTypeType.Type type = null;
     private int transitRadius = 0;
 
-    public WaypointParameter(double latitude, double longitude, double altitude, String userLabel, Type type, int transitRadius) {
+    public Waypoint(double latitude, double longitude, double altitude, String userLabel, WaypointParameterTypeType.Type type, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -29,7 +26,7 @@ public class WaypointParameter {
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, String userLabel, Type type) {
+    public Waypoint(double latitude, double longitude, double altitude, String userLabel, WaypointParameterTypeType.Type type) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -37,7 +34,7 @@ public class WaypointParameter {
         this.type = type;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, Type type, int transitRadius) {
+    public Waypoint(double latitude, double longitude, double altitude, WaypointParameterTypeType.Type type, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -45,14 +42,14 @@ public class WaypointParameter {
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, Type type) {
+    public Waypoint(double latitude, double longitude, double altitude, WaypointParameterTypeType.Type type) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.type = type;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, String userLabel, int transitRadius) {
+    public Waypoint(double latitude, double longitude, double altitude, String userLabel, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -60,27 +57,27 @@ public class WaypointParameter {
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, String userLabel) {
+    public Waypoint(double latitude, double longitude, double altitude, String userLabel) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.userLabel = userLabel;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude, int transitRadius) {
+    public Waypoint(double latitude, double longitude, double altitude, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, double altitude) {
+    public Waypoint(double latitude, double longitude, double altitude) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
     }
 
-    public WaypointParameter(double latitude, double longitude, String userLabel, Type type, int transitRadius) {
+    public Waypoint(double latitude, double longitude, String userLabel, WaypointParameterTypeType.Type type, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.userLabel = userLabel;
@@ -88,46 +85,46 @@ public class WaypointParameter {
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, String userLabel, Type type) {
+    public Waypoint(double latitude, double longitude, String userLabel, WaypointParameterTypeType.Type type) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.userLabel = userLabel;
         this.type = type;
     }
 
-    public WaypointParameter(double latitude, double longitude, Type type, int transitRadius) {
+    public Waypoint(double latitude, double longitude, WaypointParameterTypeType.Type type, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.type = type;
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, Type type) {
+    public Waypoint(double latitude, double longitude, WaypointParameterTypeType.Type type) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.type = type;
     }
 
-    public WaypointParameter(double latitude, double longitude, String userLabel, int transitRadius) {
+    public Waypoint(double latitude, double longitude, String userLabel, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.userLabel = userLabel;
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude, String userLabel) {
+    public Waypoint(double latitude, double longitude, String userLabel) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.userLabel = userLabel;
     }
 
-    public WaypointParameter(double latitude, double longitude, int transitRadius) {
+    public Waypoint(double latitude, double longitude, int transitRadius) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.transitRadius = transitRadius;
     }
 
-    public WaypointParameter(double latitude, double longitude) {
+    public Waypoint(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -164,11 +161,11 @@ public class WaypointParameter {
         this.userLabel = userLabel;
     }
 
-    public Type getType() {
+    public WaypointParameterTypeType.Type getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(WaypointParameterTypeType.Type type) {
         this.type = type;
     }
 
@@ -182,7 +179,7 @@ public class WaypointParameter {
 
     @Override
     public String toString() {
-        return "WaypointParameter{" +
+        return "Waypoint{" +
                 "latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", altitude=" + altitude +
@@ -197,7 +194,7 @@ public class WaypointParameter {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        WaypointParameter that = (WaypointParameter) o;
+        Waypoint that = (Waypoint) o;
 
         if (Double.compare(that.latitude, latitude) != 0) return false;
         if (Double.compare(that.longitude, longitude) != 0) return false;

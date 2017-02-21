@@ -1,18 +1,14 @@
-package de.haw_hamburg.informatik.core.here4j.routing;
+package de.haw_hamburg.informatik.core.here4j.routing.resources;
 
-import de.haw_hamburg.informatik.core.here4j.query.ARequest;
 import de.haw_hamburg.informatik.core.here4j.query.ResponseFormat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import de.haw_hamburg.informatik.core.here4j.routing.resources.RouteRequest;
 
 import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
  */
-public class SimpleRouteRequest extends RouteRequest{
+public class SimpleRouteRequest extends RouteRequest {
 
     private final static String BASEURL = "https://route.cit.api.here.com";
     private final static String PATH = "/routing/7.2/";
