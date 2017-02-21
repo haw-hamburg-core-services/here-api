@@ -1,4 +1,4 @@
-package de.haw_hamburg.informatik.core.here4j;
+package de.haw_hamburg.informatik.core.here4j.properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

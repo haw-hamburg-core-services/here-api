@@ -1,5 +1,7 @@
-package de.haw_hamburg.informatik.core.here4j;
+package de.haw_hamburg.informatik.core.here4j.query;
 
+import de.haw_hamburg.informatik.core.here4j.properties.Properties;
+import de.haw_hamburg.informatik.core.here4j.properties.PropertyReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
@@ -21,13 +23,13 @@ public abstract class ARequest {
     private final String format;
     private final String app_code;
     private final String app_id;
-    private Properties properties = PropertyReader.readProperties();
 
-    public ARequest(String baseURL, String path, String resource, String format) {
+    public ARequest(String baseURL, String path, String resource, ResponseFormat format) {
         this.baseURL = baseURL;
         this.path = path;
         this.resource = resource;
-        this.format = format;
+        this.format = format.name();
+        Properties properties = PropertyReader.readProperties();
         this.app_code = properties.appCode;
         this.app_id = properties.appID;
     }

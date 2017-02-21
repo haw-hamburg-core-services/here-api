@@ -1,7 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.weather;
 
-import de.haw_hamburg.informatik.core.here4j.Properties;
-import de.haw_hamburg.informatik.core.here4j.PropertyReader;
+import de.haw_hamburg.informatik.core.here4j.properties.Properties;
+import de.haw_hamburg.informatik.core.here4j.properties.PropertyReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
