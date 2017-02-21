@@ -1,6 +1,5 @@
 package de.haw_hamburg.informatik.core.here4j;
 
-import de.haw_hamburg.informatik.core.here4j.weather.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

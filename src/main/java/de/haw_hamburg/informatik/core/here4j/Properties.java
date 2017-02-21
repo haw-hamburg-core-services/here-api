@@ -1,4 +1,4 @@
-package de.haw_hamburg.informatik.core.here4j.weather;
+package de.haw_hamburg.informatik.core.here4j;
 
 /**
  * Created by skrec on 03.01.2017.
