@@ -1,7 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.routing.resources;
 
 import de.haw_hamburg.informatik.core.here4j.routing.parameters.Area;
-import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.LanguageCodeType;
+import de.haw_hamburg.informatik.core.here4j.base_data_types.LanguageCodeType;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RoutingModeType;
 import de.haw_hamburg.informatik.core.here4j.routing.parameters.Waypoint;
 import javafx.util.Pair;

@@ -1,7 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.GeoCoordinateType;
+import de.haw_hamburg.informatik.core.here4j.base_data_types.GeoCoordinateType;
 
 /**
  * Created by TimoHäckel on 21.02.2017.

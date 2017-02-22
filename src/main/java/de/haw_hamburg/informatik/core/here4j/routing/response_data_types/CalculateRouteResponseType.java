@@ -1,7 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.routing.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.LanguageCodeType;
+import de.haw_hamburg.informatik.core.here4j.base_data_types.LanguageCodeType;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RouteResponseMetaInfoType;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RouteType;
 

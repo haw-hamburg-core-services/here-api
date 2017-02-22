@@ -1,4 +1,4 @@
-package de.haw_hamburg.informatik.core.here4j.routing.base_data_types;
+package de.haw_hamburg.informatik.core.here4j.base_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

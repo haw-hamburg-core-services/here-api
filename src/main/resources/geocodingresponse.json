@@ -1,0 +1,78 @@
+{
+  "Response": {
+    "MetaInfo": {
+      "Timestamp": "2017-02-22T14:33:45.574+0000"
+    },
+    "View": [
+      {
+        "_type": "SearchResultsViewType",
+        "ViewId": 0,
+        "Result": [
+          {
+            "Relevance": 1.0,
+            "MatchLevel": "houseNumber",
+            "MatchQuality": {
+              "Country": 1.0,
+              "City": 1.0,
+              "Street": [
+                1.0
+              ],
+              "HouseNumber": 1.0,
+              "PostalCode": 1.0
+            },
+            "MatchType": "pointAddress",
+            "Location": {
+              "LocationId": "NT_AMrnDYrD.ZjcuDjBR1.S-C_xAzQ",
+              "LocationType": "address",
+              "DisplayPosition": {
+                "Latitude": 53.62271,
+                "Longitude": 10.1462299
+              },
+              "NavigationPosition": [
+                {
+                  "Latitude": 53.62224,
+                  "Longitude": 10.14585
+                }
+              ],
+              "MapView": {
+                "TopLeft": {
+                  "Latitude": 53.6238342,
+                  "Longitude": 10.1443345
+                },
+                "BottomRight": {
+                  "Latitude": 53.6215858,
+                  "Longitude": 10.1481253
+                }
+              },
+              "Address": {
+                "Label": "Sassenburger Weg 10C, 22147 Hamburg, Deutschland",
+                "Country": "DEU",
+                "State": "Hamburg",
+                "County": "Hamburg",
+                "City": "Hamburg",
+                "District": "Rahlstedt",
+                "Street": "Sassenburger Weg",
+                "HouseNumber": "10C",
+                "PostalCode": "22147",
+                "AdditionalData": [
+                  {
+                    "value": "Deutschland",
+                    "key": "CountryName"
+                  },
+                  {
+                    "value": "Hamburg",
+                    "key": "StateName"
+                  },
+                  {
+                    "value": "Hamburg",
+                    "key": "CountyName"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
