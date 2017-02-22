@@ -2,6 +2,7 @@ package de.haw_hamburg.informatik.core.here4j.routing.resources;
 
 import de.haw_hamburg.informatik.core.here4j.routing.parameters.Area;
 import de.haw_hamburg.informatik.core.here4j.base_data_types.LanguageCodeType;
+import de.haw_hamburg.informatik.core.here4j.routing.response_data_types.CalculateRouteResponse;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RoutingModeType;
 import de.haw_hamburg.informatik.core.here4j.routing.parameters.Waypoint;
 import javafx.util.Pair;
@@ -62,7 +63,7 @@ public class CalculateRoute extends RouteRequest {
         this.language = language;
     }
 
-    public <T> T request(Class<T> responseType) throws URISyntaxException {
+    public CalculateRouteResponse request() throws URISyntaxException {
         Map<String, String> params = new HashMap<>();
 
         //fill map for parameters according to object variables.
@@ -111,6 +112,6 @@ public class CalculateRoute extends RouteRequest {
         }
 
         //execute resources!
-        return request(params, responseType);
+        return request(params, CalculateRouteResponse.class);
     }
 }

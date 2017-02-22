@@ -1,6 +1,8 @@
 package de.haw_hamburg.informatik.core.here4j.base_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
@@ -41,6 +43,10 @@ public class GeoCoordinateType {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
+    @JsonSetter("Latitude")
+    public void setLLatitude(double latitude) {
+        this.latitude = latitude;
+    }
 
     public double getLongitude() {
         return longitude;
@@ -49,12 +55,20 @@ public class GeoCoordinateType {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+    @JsonSetter("Longitude")
+    public void setLLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
     public double getAltitude() {
         return altitude;
     }
 
     public void setAltitude(double altitude) {
+        this.altitude = altitude;
+    }
+    @JsonSetter("Altitude")
+    public void setAAltitude(double altitude) {
         this.altitude = altitude;
     }
 

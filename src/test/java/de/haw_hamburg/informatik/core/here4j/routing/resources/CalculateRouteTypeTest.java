@@ -22,18 +22,8 @@ public class CalculateRouteTypeTest {
         transportModeTypes[0] = TransportModeType.car;
         CalculateRoute request = new CalculateRoute(waypoints, new RoutingModeType(RoutingTypeType.fastest, transportModeTypes),"lulu1",null,null, 2, new LanguageCodeType("de-de"));
 
-        String response = request.request(String.class);
-        System.out.println(response);
-
-        request = new CalculateRoute(waypoints, new RoutingModeType(RoutingTypeType.fastest, transportModeTypes),"lulu1",null,null, 2, new LanguageCodeType("de-de"));
-
-        CalculateRouteResponse routeResponse = request.request(CalculateRouteResponse.class);
+        CalculateRouteResponse routeResponse = request.request();
         System.out.println(routeResponse);
-
-//        request = new CalculateRoute(waypoints, null,null,null,null, 0, null);
-//
-//        response = request.request(String.class);
-//        System.out.println(response);
 
     }
 }

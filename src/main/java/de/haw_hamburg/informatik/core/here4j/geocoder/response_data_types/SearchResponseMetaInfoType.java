@@ -1,6 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
@@ -13,44 +14,46 @@ import java.util.Date;
 public class SearchResponseMetaInfoType {
 
     /**
-     * Mirrored RequestId value from the request structure. Can be used to trace requests.
+     * Mirrored requestId value from the request structure. Can be used to trace requests.
      */
-    private String RequestId;
+    @JsonProperty("RequestId")
+    private String requestId;
 
     /**
      * Time at which the search was performed.
      */
-    private Date Timestamp;
+    @JsonProperty("Timestamp")
+    private Date timestamp;
 
     public SearchResponseMetaInfoType(String requestId, Date timestamp) {
-        RequestId = requestId;
-        Timestamp = timestamp;
+        this.requestId = requestId;
+        this.timestamp = timestamp;
     }
 
     public SearchResponseMetaInfoType() {
     }
 
     public String getRequestId() {
-        return RequestId;
+        return requestId;
     }
 
     public void setRequestId(String requestId) {
-        RequestId = requestId;
+        this.requestId = requestId;
     }
 
     public Date getTimestamp() {
-        return Timestamp;
+        return timestamp;
     }
 
     public void setTimestamp(Date timestamp) {
-        Timestamp = timestamp;
+        this.timestamp = timestamp;
     }
 
     @Override
     public String toString() {
         return "SearchResponseMetaInfoType{" +
-                "RequestId='" + RequestId + '\'' +
-                ", Timestamp=" + Timestamp +
+                "requestId='" + requestId + '\'' +
+                ", timestamp=" + timestamp +
                 '}';
     }
 }

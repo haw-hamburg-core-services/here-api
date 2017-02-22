@@ -1,6 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.haw_hamburg.informatik.core.here4j.base_data_types.GeoCoordinateType;
 
 /**
@@ -11,38 +12,40 @@ import de.haw_hamburg.informatik.core.here4j.base_data_types.GeoCoordinateType;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MapViewType {
 
-    private GeoCoordinateType TopLeft;
-    private GeoCoordinateType BottomRight;
+    @JsonProperty("TopLeft")
+    private GeoCoordinateType topLeft;
+    @JsonProperty("BottomRight")
+    private GeoCoordinateType bottomRight;
 
     public MapViewType(GeoCoordinateType topLeft, GeoCoordinateType bottomRight) {
-        TopLeft = topLeft;
-        BottomRight = bottomRight;
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
     }
 
     public MapViewType() {
     }
 
     public GeoCoordinateType getTopLeft() {
-        return TopLeft;
+        return topLeft;
     }
 
     public void setTopLeft(GeoCoordinateType topLeft) {
-        TopLeft = topLeft;
+        this.topLeft = topLeft;
     }
 
     public GeoCoordinateType getBottomRight() {
-        return BottomRight;
+        return bottomRight;
     }
 
     public void setBottomRight(GeoCoordinateType bottomRight) {
-        BottomRight = bottomRight;
+        this.bottomRight = bottomRight;
     }
 
     @Override
     public String toString() {
         return "MapViewType{" +
-                "TopLeft=" + TopLeft +
-                ", BottomRight=" + BottomRight +
+                "topLeft=" + topLeft +
+                ", bottomRight=" + bottomRight +
                 '}';
     }
 }

@@ -11,13 +11,16 @@ import static org.junit.Assert.*;
 public class GeocodingTest {
     @Test
     public void requestTest() throws Exception {
-        Geocoding geocoding = new Geocoding("Sassenburger Weg 10c, 22147 Hamburg, Germany");
+//        Geocoding eocoding = new Geocoding("Sassenburger Weg 10c, 22147 Hamburg, Germany");
 
-        String responseString = geocoding.request(String.class);
-        System.out.println(responseString);
+//        String responseString = geocoding.request(String.class);
+//        System.out.println(responseString);
 
-        GeocodingResponse response = geocoding.request(GeocodingResponse.class);
-        System.out.println(response);
+
+        Geocoding request = new Geocoding("Sassenburger Weg 10c, 22147 Hamburg, Germany");
+
+        GeocodingResponse Response = request.request();
+        System.out.println(Response);
     }
 
 }

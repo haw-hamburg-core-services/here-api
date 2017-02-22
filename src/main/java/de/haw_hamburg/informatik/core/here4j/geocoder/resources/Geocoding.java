@@ -1,5 +1,6 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.resources;
 
+import de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types.GeocodingResponse;
 import de.haw_hamburg.informatik.core.here4j.query.ARequest;
 import de.haw_hamburg.informatik.core.here4j.query.ResponseFormat;
 import sun.reflect.generics.tree.FormalTypeParameter;
@@ -31,7 +32,7 @@ public class Geocoding extends ARequest{
         this.searchtext = searchtext;
     }
 
-    public <T> T request (Class<T> responseType) throws URISyntaxException {
+    public GeocodingResponse request () throws URISyntaxException {
 
         Map<String, String> params = new HashMap<>();
 
@@ -41,6 +42,6 @@ public class Geocoding extends ARequest{
             params.put("searchtext", searchtext);
         }
 
-        return request(params, responseType);
+        return request(params, GeocodingResponse.class);
     }
 }

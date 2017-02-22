@@ -1,12 +1,13 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by TimoHäckel on 22.02.2017.
  *
  * Address record of a Location. Attributes are normalized to US feature names and can be mapped to the local feature
- * levels (for example, State matches "Bundesland" in Germany) using mapping tables.
+ * levels (for example, state matches "Bundesland" in Germany) using mapping tables.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressType {
@@ -14,178 +15,189 @@ public class AddressType {
     /**
      * Assembled address value for displaying purposes.
      */
-    private String Label;
+    @JsonProperty("Label")
+    private String label;
 
     /**
      * ISO 3166-alpha-3 country code
      */
-    private String Country;
+    @JsonProperty("Country")
+    private String country;
 
     /**
      * Includes the first subdivision level below the country. Where commonly used, this is a state code such as
      * CA for California.
      */
-    private String State;
+    @JsonProperty("State")
+    private String state;
 
     /**
-     * County name together with the language information
+     * county name together with the language information
      */
-    private String County;
+    @JsonProperty("County")
+    private String county;
 
     /**
-     * City name together with the language information.
+     * city name together with the language information.
      */
-    private String City;
+    @JsonProperty("City")
+    private String city;
 
     /**
-     * District name together with the language information.
+     * district name together with the language information.
      */
-    private String District;
+    @JsonProperty("District")
+    private String district;
 
     /**
-     * Street name together with the language information
+     * street name together with the language information
      */
-    private String Street;
+    @JsonProperty("Street")
+    private String street;
 
     /**
-     * Street name decomposed into the different name parts
+     * street name decomposed into the different name parts
      */
-    private String StreetDetails;
+    @JsonProperty("StreetDetails")
+    private String streetDetails;
 
     /**
      * House number together with the language information (if available)
      */
-    private String HouseNumber;
+    @JsonProperty("HouseNumber")
+    private String houseNumber;
 
     /**
      * Postal code
      */
-    private String PostalCode;
+    @JsonProperty("PostalCode")
+    private String postalCode;
 
     /**
-     * Building name together with the language information
+     * building name together with the language information
      */
-    private String Building;
+    @JsonProperty("Building")
+    private String building;
 
     public AddressType(String label, String country, String state, String county, String city, String district, String street, String streetDetails, String houseNumber, String postalCode, String building) {
-        Label = label;
-        Country = country;
-        State = state;
-        County = county;
-        City = city;
-        District = district;
-        Street = street;
-        StreetDetails = streetDetails;
-        HouseNumber = houseNumber;
-        PostalCode = postalCode;
-        Building = building;
+        this.label = label;
+        this.country = country;
+        this.state = state;
+        this.county = county;
+        this.city = city;
+        this.district = district;
+        this.street = street;
+        this.streetDetails = streetDetails;
+        this.houseNumber = houseNumber;
+        this.postalCode = postalCode;
+        this.building = building;
     }
 
     public AddressType() {
     }
 
     public String getLabel() {
-        return Label;
+        return label;
     }
 
     public void setLabel(String label) {
-        Label = label;
+        this.label = label;
     }
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public String getCounty() {
-        return County;
+        return county;
     }
 
     public void setCounty(String county) {
-        County = county;
+        this.county = county;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getDistrict() {
-        return District;
+        return district;
     }
 
     public void setDistrict(String district) {
-        District = district;
+        this.district = district;
     }
 
     public String getStreet() {
-        return Street;
+        return street;
     }
 
     public void setStreet(String street) {
-        Street = street;
+        this.street = street;
     }
 
     public String getStreetDetails() {
-        return StreetDetails;
+        return streetDetails;
     }
 
     public void setStreetDetails(String streetDetails) {
-        StreetDetails = streetDetails;
+        this.streetDetails = streetDetails;
     }
 
     public String getHouseNumber() {
-        return HouseNumber;
+        return houseNumber;
     }
 
     public void setHouseNumber(String houseNumber) {
-        HouseNumber = houseNumber;
+        this.houseNumber = houseNumber;
     }
 
     public String getPostalCode() {
-        return PostalCode;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     public String getBuilding() {
-        return Building;
+        return building;
     }
 
     public void setBuilding(String building) {
-        Building = building;
+        this.building = building;
     }
 
     @Override
     public String toString() {
         return "AddressType{" +
-                "Label='" + Label + '\'' +
-                ", Country='" + Country + '\'' +
-                ", State='" + State + '\'' +
-                ", County='" + County + '\'' +
-                ", City='" + City + '\'' +
-                ", District='" + District + '\'' +
-                ", Street='" + Street + '\'' +
-                ", StreetDetails='" + StreetDetails + '\'' +
-                ", HouseNumber='" + HouseNumber + '\'' +
-                ", PostalCode='" + PostalCode + '\'' +
-                ", Building='" + Building + '\'' +
+                "label='" + label + '\'' +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", county='" + county + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", streetDetails='" + streetDetails + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", building='" + building + '\'' +
                 '}';
     }
 }

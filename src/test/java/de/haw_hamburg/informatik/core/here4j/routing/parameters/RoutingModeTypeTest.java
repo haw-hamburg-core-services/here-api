@@ -15,15 +15,15 @@ public class RoutingModeTypeTest {
         String [] features = new String [1];
         TransportModeType [] transportModeTypes = new TransportModeType [1];
         transportModeTypes[0] = TransportModeType.car;
-        features [0] = RouteFeature.motorway.name() + ":" + RouteFeatureWeight.softExclude;
+        features [0] = RouteFeature.motorway.name() + ":" + RouteFeatureWeight.softExclude.getValue();
         assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest).toRequestString(), "fastest");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes).toRequestString(), "fastest;car");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, TrafficModeType.disabled).toRequestString(), "fastest;traffic:disabled");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, features).toRequestString(), "fastest;motorway:-2");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, TrafficModeType.disabled).toRequestString(), "fastest;car;traffic:disabled");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, features).toRequestString(), "fastest;car;motorway:-2");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, TrafficModeType.disabled, features).toRequestString(), "fastest;traffic:disabled;motorway:-2");
-        assertEquals("1 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, TrafficModeType.disabled, features).toRequestString(), "fastest;car;traffic:disabled;motorway:-2");
+        assertEquals("2 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes).toRequestString(), "fastest;car");
+        assertEquals("3 Failed!", new RoutingModeType(RoutingTypeType.fastest, TrafficModeType.disabled).toRequestString(), "fastest;traffic:disabled");
+        assertEquals("4 Failed!", new RoutingModeType(RoutingTypeType.fastest, features).toRequestString(), "fastest;motorway:-2");
+        assertEquals("5 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, TrafficModeType.disabled).toRequestString(), "fastest;car;traffic:disabled");
+        assertEquals("6 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, features).toRequestString(), "fastest;car;motorway:-2");
+        assertEquals("7 Failed!", new RoutingModeType(RoutingTypeType.fastest, TrafficModeType.disabled, features).toRequestString(), "fastest;traffic:disabled;motorway:-2");
+        assertEquals("8 Failed!", new RoutingModeType(RoutingTypeType.fastest, transportModeTypes, TrafficModeType.disabled, features).toRequestString(), "fastest;car;traffic:disabled;motorway:-2");
 
     }
 }

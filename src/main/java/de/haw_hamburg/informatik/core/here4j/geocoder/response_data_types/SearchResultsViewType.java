@@ -1,6 +1,7 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Arrays;
 
@@ -10,22 +11,25 @@ import java.util.Arrays;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchResultsViewType {
 
+    @JsonProperty("_type")
     private String _type;
 
     /**
      * A key to distinguish between different types of views. Always set to 0.
      */
-    private String ViewId;
+    @JsonProperty("ViewId")
+    private String viewId;
 
     /**
      * The resulting items which have been found along with attributes indicating the quality of the search result.
      */
-    private SearchResultType[] Result;
+    @JsonProperty("Result")
+    private SearchResultType[] result;
 
     public SearchResultsViewType(String _type, String viewId, SearchResultType[] result) {
         this._type = _type;
-        ViewId = viewId;
-        Result = result;
+        this.viewId = viewId;
+        this.result = result;
     }
 
     public SearchResultsViewType() {
@@ -40,27 +44,27 @@ public class SearchResultsViewType {
     }
 
     public String getViewId() {
-        return ViewId;
+        return viewId;
     }
 
     public void setViewId(String viewId) {
-        ViewId = viewId;
+        this.viewId = viewId;
     }
 
     public SearchResultType[] getResult() {
-        return Result;
+        return result;
     }
 
     public void setResult(SearchResultType[] result) {
-        Result = result;
+        this.result = result;
     }
 
     @Override
     public String toString() {
         return "SearchResultsViewType{" +
                 "_type='" + _type + '\'' +
-                ", ViewId='" + ViewId + '\'' +
-                ", Result=" + Arrays.toString(Result) +
+                ", viewId='" + viewId + '\'' +
+                ", result=" + Arrays.toString(result) +
                 '}';
     }
 }

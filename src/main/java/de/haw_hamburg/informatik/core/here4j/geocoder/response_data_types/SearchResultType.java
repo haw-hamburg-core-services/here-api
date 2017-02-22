@@ -1,11 +1,12 @@
 package de.haw_hamburg.informatik.core.here4j.geocoder.response_data_types;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by TimoHäckel on 22.02.2017.
  *
- * The SearchResult contains the actual result as a Location object together with information on how good the result
+ * The SearchResult contains the actual result as a location object together with information on how good the result
  * matches the search request.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -15,107 +16,113 @@ public class SearchResultType {
      * Indicates the relevance of the results found; the higher the score the more relevant the alternative.
      * The score is a normalized value between 0 and 1.
      */
-    private double Relevance;
+    @JsonProperty("Relevance")
+    private double relevance;
 
     /**
-     * Distance between the identified location object and the specified client position in meters. Only provided if a
+     * distance between the identified location object and the specified client position in meters. Only provided if a
      * proximity was specified in the request (parameter prox). For areas like admin or landmark areas the distance is
      * defined as the distance between the input coordinate and the boundary of the area. If the area covers the input
      * coordinate the distance will be negative.
      */
-    private double Distance;
+    @JsonProperty("Distance")
+    private double distance;
 
     /**
      * The most detailed address field that matches the geocoding or reverse geocoding query.
      */
-    private MatchLevelType MatchLevel;
+    @JsonProperty("MatchLevel")
+    private MatchLevelType matchLevel;
 
     /**
-     * Detailed information about the match quality on the attribute level. MatchQuality is always 1.0 for reverse geocode results.
+     * Detailed information about the match quality on the attribute level. matchQuality is always 1.0 for reverse geocode results.
      */
-    private LocationMatchQualityType MatchQuality;
+    @JsonProperty("MatchQuality")
+    private LocationMatchQualityType matchQuality;
 
     /**
      * Quality of the location match.
-     *      pointAddress Location matches exactly as Point Address.
-     *      interpolated Location was interpolated.
+     *      pointAddress location matches exactly as Point Address.
+     *      interpolated location was interpolated.
      */
-    private MatchTypeType MatchType;
+    @JsonProperty("MatchType")
+    private MatchTypeType matchType;
 
     /**
      * The location that was found.
      */
-    private LocationType Location;
+    @JsonProperty("Location")
+    private LocationType location;
 
     public SearchResultType(double relevance, double distance, MatchLevelType matchLevel, LocationMatchQualityType matchQuality, MatchTypeType matchType, LocationType location) {
-        Relevance = relevance;
-        Distance = distance;
-        MatchLevel = matchLevel;
-        MatchQuality = matchQuality;
-        MatchType = matchType;
-        Location = location;
+        this.relevance = relevance;
+        this.distance = distance;
+        this.matchLevel = matchLevel;
+        this.matchQuality = matchQuality;
+        this.matchType = matchType;
+        this.location = location;
     }
 
     public SearchResultType() {
     }
 
     public double getRelevance() {
-        return Relevance;
+        return relevance;
     }
 
     public void setRelevance(double relevance) {
-        Relevance = relevance;
+        this.relevance = relevance;
     }
 
     public double getDistance() {
-        return Distance;
+        return distance;
     }
 
     public void setDistance(double distance) {
-        Distance = distance;
+        this.distance = distance;
     }
 
     public MatchLevelType getMatchLevel() {
-        return MatchLevel;
+        return matchLevel;
     }
 
     public void setMatchLevel(MatchLevelType matchLevel) {
-        MatchLevel = matchLevel;
+        this.matchLevel = matchLevel;
     }
 
     public LocationMatchQualityType getMatchQuality() {
-        return MatchQuality;
+        return matchQuality;
     }
 
     public void setMatchQuality(LocationMatchQualityType matchQuality) {
-        MatchQuality = matchQuality;
+        this.matchQuality = matchQuality;
     }
 
     public MatchTypeType getMatchType() {
-        return MatchType;
+        return matchType;
     }
 
     public void setMatchType(MatchTypeType matchType) {
-        MatchType = matchType;
+        this.matchType = matchType;
     }
 
     public LocationType getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(LocationType location) {
-        Location = location;
+        this.location = location;
     }
 
     @Override
     public String toString() {
         return "SearchResultType{" +
-                "Relevance=" + Relevance +
-                ", Distance=" + Distance +
-                ", MatchLevel=" + MatchLevel +
-                ", MatchQuality=" + MatchQuality +
-                ", MatchType=" + MatchType +
-                ", Location=" + Location +
+                "relevance=" + relevance +
+                ", distance=" + distance +
+                ", matchLevel=" + matchLevel +
+                ", matchQuality=" + matchQuality +
+                ", matchType=" + matchType +
+                ", location=" + location +
                 '}';
     }
 }

@@ -160,7 +160,7 @@ public class RoutingModeType {
         //[Features]
         if(features != null){
             for(String feature : features){
-                ret += ";";
+                ret += ";" + feature;
             }
         }
 
