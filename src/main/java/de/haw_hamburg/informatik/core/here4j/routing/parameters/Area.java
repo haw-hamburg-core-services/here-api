@@ -1,10 +1,12 @@
 package de.haw_hamburg.informatik.core.here4j.routing.parameters;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javafx.geometry.Point2D;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Area {
     //four corners of area rectangle
     private Point2D topLeft;

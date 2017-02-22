@@ -3,6 +3,8 @@ package de.haw_hamburg.informatik.core.here4j.routing.resources;
 import de.haw_hamburg.informatik.core.here4j.query.ARequest;
 import de.haw_hamburg.informatik.core.here4j.query.ResponseFormat;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RoutingModeType;
+import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RoutingTypeType;
+import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.TransportModeType;
 
 import java.net.URISyntaxException;
 import java.util.HashMap;
@@ -46,7 +48,9 @@ public class RouteRequest extends ARequest{
 
     public String request (String waypoint0, String waypoint1) throws URISyntaxException {
 
-        return request(waypoint0, waypoint1, new RoutingModeType(RoutingModeType.RoutingType.fastest, RoutingModeType.TransportMode.car));
+        TransportModeType [] transportModeTypes = new TransportModeType [1];
+        transportModeTypes[0] =  TransportModeType.car;
+        return request(waypoint0, waypoint1, new RoutingModeType(RoutingTypeType.fastest, transportModeTypes));
     }
 
 

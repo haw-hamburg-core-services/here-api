@@ -1,5 +1,6 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.GeoCoordinateType;
 
 /**
@@ -12,6 +13,7 @@ import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.GeoCoordina
  * If the the request does not pass a coordinate when specifying the waypoint, the originalPosition attribute will not
  * be filled.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WaypointType {
 
     /**
@@ -163,5 +165,21 @@ public class WaypointType {
 
     public void setShapeIndex(int shapeIndex) {
         this.shapeIndex = shapeIndex;
+    }
+
+    @Override
+    public String toString() {
+        return "WaypointType{" +
+                "linkId='" + linkId + '\'' +
+                ", mappedPosition=" + mappedPosition +
+                ", originalPosition=" + originalPosition +
+                ", type=" + type +
+                ", spot=" + spot +
+                ", sideOfStreet=" + sideOfStreet +
+                ", mappedRoadName='" + mappedRoadName + '\'' +
+                ", label='" + label + '\'' +
+                ", userLabel='" + userLabel + '\'' +
+                ", shapeIndex=" + shapeIndex +
+                '}';
     }
 }

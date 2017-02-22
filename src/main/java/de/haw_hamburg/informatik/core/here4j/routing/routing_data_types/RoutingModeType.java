@@ -1,6 +1,8 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Map;
 
 /**
@@ -9,6 +11,7 @@ import java.util.Map;
  * The RoutingMode specifies how the route is calculated. Parameter representation:
  *      RoutingMode = Type + [TransportModes] + [TrafficModeType] + [Feature]
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RoutingModeType {
 
     /**
@@ -19,7 +22,7 @@ public class RoutingModeType {
     /**
      * Specify which mode of transport to calculate the route for.
      */
-    private TransportModeType transportModes = null;
+    private TransportModeType [] transportModes = null;
 
     /**
      * Specify whether to optimize a route for traffic.
@@ -29,13 +32,16 @@ public class RoutingModeType {
     /**
      * Route feature weightings to be applied when calculating the route. As many as required.
      */
-    private Map<RouteFeature, RouteFeatureWeight> features = null;
+    private String [] features = null;
+
+    public RoutingModeType() {
+    }
 
     public RoutingModeType(RoutingTypeType type) {
         this.type = type;
     }
 
-    public RoutingModeType(RoutingTypeType type, TransportModeType transportModes) {
+    public RoutingModeType(RoutingTypeType type, TransportModeType [] transportModes) {
         this.type = type;
         this.transportModes = transportModes;
     }
@@ -45,30 +51,30 @@ public class RoutingModeType {
         this.trafficMode = trafficMode;
     }
 
-    public RoutingModeType(RoutingTypeType type, Map<RouteFeature, RouteFeatureWeight> features) {
+    public RoutingModeType(RoutingTypeType type, String [] features) {
         this.type = type;
         this.features = features;
     }
 
-    public RoutingModeType(RoutingTypeType type, TransportModeType transportModes, TrafficModeType trafficMode) {
+    public RoutingModeType(RoutingTypeType type, TransportModeType [] transportModes, TrafficModeType trafficMode) {
         this.type = type;
         this.transportModes = transportModes;
         this.trafficMode = trafficMode;
     }
 
-    public RoutingModeType(RoutingTypeType type, TrafficModeType trafficMode, Map<RouteFeature, RouteFeatureWeight> features) {
+    public RoutingModeType(RoutingTypeType type, TrafficModeType trafficMode, String [] features) {
         this.type = type;
         this.trafficMode = trafficMode;
         this.features = features;
     }
 
-    public RoutingModeType(RoutingTypeType type, TransportModeType transportModes, Map<RouteFeature, RouteFeatureWeight> features) {
+    public RoutingModeType(RoutingTypeType type, TransportModeType [] transportModes, String [] features) {
         this.type = type;
         this.transportModes = transportModes;
         this.features = features;
     }
 
-    public RoutingModeType(RoutingTypeType type, TransportModeType transportModes, TrafficModeType trafficMode, Map<RouteFeature, RouteFeatureWeight> features) {
+    public RoutingModeType(RoutingTypeType type, TransportModeType [] transportModes, TrafficModeType trafficMode, String [] features) {
         this.type = type;
         this.transportModes = transportModes;
         this.trafficMode = trafficMode;
@@ -83,11 +89,11 @@ public class RoutingModeType {
         this.type = type;
     }
 
-    public TransportModeType getTransportModes() {
+    public TransportModeType [] getTransportModes() {
         return transportModes;
     }
 
-    public void setTransportModes(TransportModeType transportModes) {
+    public void setTransportModes(TransportModeType [] transportModes) {
         this.transportModes = transportModes;
     }
 
@@ -99,23 +105,15 @@ public class RoutingModeType {
         this.trafficMode = trafficMode;
     }
 
-    public Map<RouteFeature, RouteFeatureWeight> getFeatures() {
+    public String [] getFeatures() {
         return features;
     }
 
-    public void setFeatures(Map<RouteFeature, RouteFeatureWeight> features) {
+    public void setFeatures(String [] features) {
         this.features = features;
     }
 
-    @Override
-    public String toString() {
-        return "RoutingModeType{" +
-                "type=" + type +
-                ", transportModes=" + transportModes +
-                ", trafficMode=" + trafficMode +
-                ", features=" + features +
-                '}';
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -146,9 +144,12 @@ public class RoutingModeType {
         //Type
         ret += type.name();
 
-        //[TransportModeType]
+        //[TransportModeType []]
         if(transportModes != null){
-            ret += ";" + transportModes.name();
+            for (TransportModeType transportMode : transportModes) {
+                ret += ";" + transportMode.name();
+
+            }
         }
 
         //[TrafficModeType]
@@ -158,8 +159,8 @@ public class RoutingModeType {
 
         //[Features]
         if(features != null){
-            for(Map.Entry<RouteFeature, RouteFeatureWeight> feature : features.entrySet()){
-                ret += ";" + feature.getKey().name() + ":" + feature.getValue().getValue();
+            for(String feature : features){
+                ret += ";";
             }
         }
 

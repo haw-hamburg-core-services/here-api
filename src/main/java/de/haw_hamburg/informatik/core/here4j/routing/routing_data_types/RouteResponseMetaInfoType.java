@@ -1,10 +1,13 @@
-package de.haw_hamburg.informatik.core.here4j.routing.response_data_types;
+package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
  *
  * Meta information which is not directly related to the route calculation is wrapped within a separate element.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RouteResponseMetaInfoType {
 
     /**
@@ -78,5 +81,16 @@ public class RouteResponseMetaInfoType {
 
     public void setInterfaceVersion(String interfaceVersion) {
         this.interfaceVersion = interfaceVersion;
+    }
+
+    @Override
+    public String toString() {
+        return "RouteResponseMetaInfoType{" +
+                "requestId='" + requestId + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", mapVersion='" + mapVersion + '\'' +
+                ", moduleVersion='" + moduleVersion + '\'' +
+                ", interfaceVersion='" + interfaceVersion + '\'' +
+                '}';
     }
 }

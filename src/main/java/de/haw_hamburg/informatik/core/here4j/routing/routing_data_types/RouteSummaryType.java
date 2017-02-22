@@ -1,6 +1,8 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.Arrays;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
@@ -8,6 +10,7 @@ import java.util.List;
  * This type provides summary information for the entire route. This type of information includes travel time, distance,
  * and descriptions of the overall route path.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RouteSummaryType {
 
     /**
@@ -32,7 +35,7 @@ public class RouteSummaryType {
     /**
      * Special link characteristics (like ferry or motorway usage) which are covered by the route.
      */
-    private List<RouteLinkFlagType> flags;
+    private RouteLinkFlagType [] flags;
 
     /**
      * Textual description of route summary.
@@ -49,7 +52,7 @@ public class RouteSummaryType {
      */
     private String _type;
 
-    public RouteSummaryType(double distance, double trafficTime, double baseTime, List<RouteLinkFlagType> flags, String text, double travelTime, String _type) {
+    public RouteSummaryType(double distance, double trafficTime, double baseTime, RouteLinkFlagType [] flags, String text, double travelTime, String _type) {
         this.distance = distance;
         this.trafficTime = trafficTime;
         this.baseTime = baseTime;
@@ -86,11 +89,11 @@ public class RouteSummaryType {
         this.baseTime = baseTime;
     }
 
-    public List<RouteLinkFlagType> getFlags() {
+    public RouteLinkFlagType [] getFlags() {
         return flags;
     }
 
-    public void setFlags(List<RouteLinkFlagType> flags) {
+    public void setFlags(RouteLinkFlagType [] flags) {
         this.flags = flags;
     }
 
@@ -116,5 +119,18 @@ public class RouteSummaryType {
 
     public void set_type(String _type) {
         this._type = _type;
+    }
+
+    @Override
+    public String toString() {
+        return "RouteSummaryType{" +
+                "distance=" + distance +
+                ", trafficTime=" + trafficTime +
+                ", baseTime=" + baseTime +
+                ", flags=" + Arrays.toString(flags) +
+                ", text='" + text + '\'' +
+                ", travelTime=" + travelTime +
+                ", _type='" + _type + '\'' +
+                '}';
     }
 }

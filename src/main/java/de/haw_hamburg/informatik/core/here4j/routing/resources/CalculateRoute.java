@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public class CalculateRoute extends RouteRequest {
 
-    private List<Waypoint> waypoints = null;
+    private Waypoint [] waypoints = null;
     private RoutingModeType mode = null;
     private String requestId = null;
     private List<Area> avoidAreas = null;
@@ -45,7 +45,7 @@ public class CalculateRoute extends RouteRequest {
      * @param alternatives Optional -> may be null
      * @param language     Optional -> may be null
      */
-    public CalculateRoute(List<Waypoint> waypoints, RoutingModeType mode, String requestId, List<Area> avoidAreas, Pair<String, Date> timeDate, int alternatives, LanguageCodeType language) throws InvalidParameterException {
+    public CalculateRoute(Waypoint [] waypoints, RoutingModeType mode, String requestId, List<Area> avoidAreas, Pair<String, Date> timeDate, int alternatives, LanguageCodeType language) throws InvalidParameterException {
         super(Resource.calculateroute);
         if(waypoints == null){
             throw new InvalidParameterException("No waypoints specified, at least 2 required.");

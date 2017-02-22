@@ -1,10 +1,13 @@
 package de.haw_hamburg.informatik.core.here4j.routing.base_data_types;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by TimoHäckel on 21.02.2017.
  *
  * The GeoCoordinateType represents a geographical position.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GeoCoordinateType {
     /**
      * WGS-84 / degrees with (-90 <= Latitude <= 90), precision is limited to 7 positions after the decimal point
@@ -61,5 +64,14 @@ public class GeoCoordinateType {
             ret += "," + altitude;
         }
         return ret;
+    }
+
+    @Override
+    public String toString() {
+        return "GeoCoordinateType{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", altitude=" + altitude +
+                '}';
     }
 }

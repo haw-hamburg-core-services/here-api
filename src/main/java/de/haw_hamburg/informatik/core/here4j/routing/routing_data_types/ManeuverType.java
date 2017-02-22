@@ -1,10 +1,12 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.GeoCoordinateType;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ManeuverType {
     private GeoCoordinateType position;
     private String instruction;
@@ -71,5 +73,17 @@ public class ManeuverType {
 
     public void set_type(String _type) {
         this._type = _type;
+    }
+
+    @Override
+    public String toString() {
+        return "ManeuverType{" +
+                "position=" + position +
+                ", instruction='" + instruction + '\'' +
+                ", travelTime=" + travelTime +
+                ", lenght=" + lenght +
+                ", id='" + id + '\'' +
+                ", _type='" + _type + '\'' +
+                '}';
     }
 }

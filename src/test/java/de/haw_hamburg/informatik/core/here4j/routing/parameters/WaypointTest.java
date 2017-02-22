@@ -17,12 +17,12 @@ public class WaypointTest {
 
         assertEquals("3 Failed!",new Waypoint(1.3,123.546, 5).toRequestString(), "geo!1.3,123.546;5");
         assertEquals("4 Failed!",new Waypoint(1.3,123.546, "Home").toRequestString(), "geo!1.3,123.546;;Home");
-        assertEquals("5 Failed!",new Waypoint(1.3,123.546, WaypointParameterTypeType.Type.passThrough).toRequestString(), "geo!passThrough!1.3,123.546");
+        assertEquals("5 Failed!",new Waypoint(1.3,123.546, WaypointParameterTypeType.passThrough).toRequestString(), "geo!passThrough!1.3,123.546");
         assertEquals("6 Failed!",new Waypoint(1.3,123.546, 176.3, 5).toRequestString(), "geo!1.3,123.546,176.3;5");
         assertEquals("7 Failed!",new Waypoint(1.3,123.546, 176.3, "Home").toRequestString(), "geo!1.3,123.546,176.3;;Home");
-        assertEquals("8 Failed!",new Waypoint(1.3,123.546, 176.3, WaypointParameterTypeType.Type.passThrough).toRequestString(), "geo!passThrough!1.3,123.546,176.3");
+        assertEquals("8 Failed!",new Waypoint(1.3,123.546, 176.3, WaypointParameterTypeType.passThrough).toRequestString(), "geo!passThrough!1.3,123.546,176.3");
 
-        assertEquals("9 Failed!",new Waypoint(1.3,123.546, 176.3, "Home", WaypointParameterTypeType.Type.passThrough, 5).toRequestString(), "geo!passThrough!1.3,123.546,176.3;5;Home");
+        assertEquals("9 Failed!",new Waypoint(1.3,123.546, 176.3, "Home", WaypointParameterTypeType.passThrough, 5).toRequestString(), "geo!passThrough!1.3,123.546,176.3;5;Home");
 
     }
 }

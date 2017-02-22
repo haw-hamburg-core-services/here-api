@@ -8,7 +8,7 @@
       "interfaceVersion": "2.6.29"
     },
     "route": [
-      {
+      {RouteFeatureWeight.softExclude
         "waypoint": [
           {
             "linkId": "-53623477",

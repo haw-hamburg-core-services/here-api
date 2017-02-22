@@ -1,7 +1,11 @@
 package de.haw_hamburg.informatik.core.here4j.routing.response_data_types;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import de.haw_hamburg.informatik.core.here4j.routing.base_data_types.LanguageCodeType;
+import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RouteResponseMetaInfoType;
 import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RouteType;
+
+import java.util.Arrays;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
@@ -13,6 +17,7 @@ import de.haw_hamburg.informatik.core.here4j.routing.routing_data_types.RouteTyp
  *
  * Data elements may be hidden if they contain no data.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CalculateRouteResponseType {
 
     /**
@@ -27,7 +32,7 @@ public class CalculateRouteResponseType {
      * between waypoints). Each response may also include information about the route itself, such as its overall shape,
      * map location, or a summary description.
      */
-    private RouteType route;
+    private RouteType [] route;
 
     /**
      * Indicates the language used for all textual information related to the route.
@@ -41,7 +46,7 @@ public class CalculateRouteResponseType {
      */
     private String requestId;
 
-    public CalculateRouteResponseType(RouteResponseMetaInfoType metaInfo, RouteType route, LanguageCodeType language, String requestId) {
+    public CalculateRouteResponseType(RouteResponseMetaInfoType metaInfo, RouteType [] route, LanguageCodeType language, String requestId) {
         this.metaInfo = metaInfo;
         this.route = route;
         this.language = language;
@@ -59,11 +64,11 @@ public class CalculateRouteResponseType {
         this.metaInfo = metaInfo;
     }
 
-    public RouteType getRoute() {
+    public RouteType [] getRoute() {
         return route;
     }
 
-    public void setRoute(RouteType route) {
+    public void setRoute(RouteType [] route) {
         this.route = route;
     }
 
@@ -81,5 +86,15 @@ public class CalculateRouteResponseType {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    @Override
+    public String toString() {
+        return "CalculateRouteResponseType{" +
+                "metaInfo=" + metaInfo +
+                ", route=" + Arrays.toString(route) +
+                ", language=" + language +
+                ", requestId='" + requestId + '\'' +
+                '}';
     }
 }

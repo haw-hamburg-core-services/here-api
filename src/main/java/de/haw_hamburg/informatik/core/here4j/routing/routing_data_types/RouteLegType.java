@@ -1,6 +1,8 @@
 package de.haw_hamburg.informatik.core.here4j.routing.routing_data_types;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.Arrays;
 
 /**
  * Created by TimoHäckel on 21.02.2017.
@@ -9,6 +11,7 @@ import java.util.List;
  * information about a route leg, such as the time required to traverse it, its shape, start and end point, as well as
  * information about any sublegs contained in the leg due to the presence of passthrough waypoints.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RouteLegType {
 
     /**
@@ -37,9 +40,9 @@ public class RouteLegType {
     /**
      * List of all maneuvers which are included in this portion of the route.
      */
-    private List<ManeuverType> maneuver;
+    private ManeuverType [] maneuver;
 
-    public RouteLegType(WaypointType start, WaypointType end, double length, double travelTime, List<ManeuverType> maneuver) {
+    public RouteLegType(WaypointType start, WaypointType end, double length, double travelTime, ManeuverType [] maneuver) {
         this.start = start;
         this.end = end;
         this.length = length;
@@ -82,11 +85,22 @@ public class RouteLegType {
         this.travelTime = travelTime;
     }
 
-    public List<ManeuverType> getManeuver() {
+    public ManeuverType [] getManeuver() {
         return maneuver;
     }
 
-    public void setManeuver(List<ManeuverType> maneuver) {
+    public void setManeuver(ManeuverType [] maneuver) {
         this.maneuver = maneuver;
+    }
+
+    @Override
+    public String toString() {
+        return "RouteLegType{" +
+                "start=" + start +
+                ", end=" + end +
+                ", length=" + length +
+                ", travelTime=" + travelTime +
+                ", maneuver=" + Arrays.toString(maneuver) +
+                '}';
     }
 }
